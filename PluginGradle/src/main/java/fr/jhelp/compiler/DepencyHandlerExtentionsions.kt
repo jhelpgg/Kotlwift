@@ -6,15 +6,15 @@ import org.gradle.kotlin.dsl.DependencyHandlerScope
 /**
  * Extension for specify a Kotlin light project dependency
  */
-fun DependencyHandlerScope.kotlinLightImplementation(dependencyCreator: KotlinLightImplementation.() -> Unit): Dependency?
+fun DependencyHandlerScope.kotlwiftImplementation(dependencyCreator: KotlwiftImplementation.() -> Unit): Dependency?
 {
-    val kotlinLightImplementation = KotlinLightImplementation()
-    dependencyCreator(kotlinLightImplementation)
+    val kotlwiftImplementation = KotlwiftImplementation()
+    dependencyCreator(kotlwiftImplementation)
 
-    if (!kotlinLightDependencies.contains(kotlinLightImplementation))
+    if (!kotlwiftDependencies.contains(kotlwiftImplementation))
     {
-        kotlinLightDependencies += kotlinLightImplementation
+        kotlwiftDependencies += kotlwiftImplementation
     }
 
-    return this.add("api", kotlinLightImplementation.dependencyNotation)
+    return this.add("api", kotlwiftImplementation.dependencyNotation)
 }

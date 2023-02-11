@@ -12,7 +12,7 @@ import java.io.FileOutputStream
 import java.io.OutputStreamWriter
 import kotlin.system.exitProcess
 
-val kotlinLightDependencies = ArrayList<KotlinLightImplementation>()
+val kotlwiftDependencies = ArrayList<KotlwiftImplementation>()
 const val SWIFT_RELATIVE_PATH = "src/main/swift"
 const val SWIFT_COMMAND_FILE = "swiftCommand"
 const val KOTLIN_SOURCE_RELATIVE_PATH = "src/main/kotlin"
@@ -24,7 +24,7 @@ const val REMOTES_ORIGIN_BRANCH = "remotes/origin/"
 const val REMOTES_ORIGIN_BRANCH_LENGTH = REMOTES_ORIGIN_BRANCH.length
 const val FETCH_DONE = "-<Fetch done>-"
 
-var kotlinLightCompileVerbose = false
+var kotlwiftCompileVerbose = false
 
 class CompilePlugin : Plugin<Project> {
     @Override
@@ -55,7 +55,7 @@ class CompilePlugin : Plugin<Project> {
             // Clone dependencies
             val directoryCloned = File(target.buildDir, "cloned")
             val clonedSourceDirectories = ArrayList<File>()
-            cloneUpdateKotlinLightDependencies(directoryCloned, clonedSourceDirectories)
+            cloneUpdateKotlwiftDependencies(directoryCloned, clonedSourceDirectories)
 
             // Get transpiler tool
             val kotlinToSwiftZip = CompilePlugin::class.java.getResource("KotlinToSwift.zip")

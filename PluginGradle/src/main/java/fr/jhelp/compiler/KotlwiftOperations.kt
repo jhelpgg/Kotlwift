@@ -13,29 +13,29 @@ import kotlin.system.exitProcess
  * @param directoryCloned Directory where put cloned projects
  * @param clonedSourceDirectories Collect cloned source file repositories
  */
-fun cloneUpdateKotlinLightDependencies(directoryCloned: File, clonedSourceDirectories: ArrayList<File>)
+fun cloneUpdateKotlwiftDependencies(directoryCloned: File, clonedSourceDirectories: ArrayList<File>)
 {
     createDirectoryAndHierarchyIfNeed(directoryCloned)
 
-    for (kotlinLightImplementation in kotlinLightDependencies)
+    for (kotlwiftImplementation in kotlwiftDependencies)
     {
-        val start = max(0, kotlinLightImplementation.gitToClone.lastIndexOf('/'))
-        var end = kotlinLightImplementation.gitToClone.lastIndexOf('.')
+        val start = max(0, kotlwiftImplementation.gitToClone.lastIndexOf('/'))
+        var end = kotlwiftImplementation.gitToClone.lastIndexOf('.')
 
         if (end < start + 1)
         {
-            end = kotlinLightImplementation.gitToClone.length
+            end = kotlwiftImplementation.gitToClone.length
         }
 
-        val directoryName = kotlinLightImplementation.gitToClone.substring(start + 1, end)
+        val directoryName = kotlwiftImplementation.gitToClone.substring(start + 1, end)
         val directoryClone = File(directoryCloned, directoryName)
 
         if (!directoryClone.exists())
         {
-            gitClone(directoryCloned, kotlinLightImplementation.gitToClone, directoryName)
+            gitClone(directoryCloned, kotlwiftImplementation.gitToClone, directoryName)
         }
 
-        checkoutUpdateBranch(directoryClone, kotlinLightImplementation.branch)
+        checkoutUpdateBranch(directoryClone, kotlwiftImplementation.branch)
         clonedSourceDirectories += File(directoryClone, KOTLIN_SOURCE_RELATIVE_PATH)
     }
 }
@@ -50,7 +50,7 @@ fun transpileSwiftSources(fileKotlinToSwiftCommand: File, clonedSourceDirectorie
     command.append(CommandFactory.commandOS.executableExtension)
     command.append(" -removeOpen -disableAutomaticPublic -header Shared ")
 
-    if(kotlinLightCompileVerbose) {
+    if(kotlwiftCompileVerbose) {
         command.append(" -verbose ")
     }
 

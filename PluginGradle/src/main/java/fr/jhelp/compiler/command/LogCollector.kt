@@ -1,6 +1,6 @@
 package fr.jhelp.compiler.command
 
-import fr.jhelp.compiler.kotlinLightCompileVerbose
+import fr.jhelp.compiler.kotlwiftCompileVerbose
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -39,7 +39,7 @@ class LogCollector(inputStream: InputStream,private  val logVerbosity: LogVerbos
                     LogVerbosity.NONE -> false
                 }
 
-            if (printLine || kotlinLightCompileVerbose)
+            if (printLine || kotlwiftCompileVerbose)
             {
                 println(line)
             }

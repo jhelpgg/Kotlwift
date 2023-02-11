@@ -31,7 +31,7 @@ package fr.feetme.sdk.tasks.future.actions
 
 import fr.feetme.sdk.actions.ActionTransformer
 import fr.feetme.sdk.tasks.future.FutureResult
-import fr.jhelp.kotlinLight.Override
+import fr.jhelp.kotlwift.Override
 
 internal class ActionUnwrapSuccess<Result> : ActionTransformer<FutureResult<Result>, Result> {
     @Override

@@ -1,6 +1,6 @@
 package fr.jhelp.compiler.command
 
-import fr.jhelp.compiler.kotlinLightCompileVerbose
+import fr.jhelp.compiler.kotlwiftCompileVerbose
 import java.io.BufferedWriter
 import java.io.File
 import java.io.OutputStreamWriter
@@ -28,7 +28,7 @@ object CommandManager
         val bufferedWriter = BufferedWriter(OutputStreamWriter(process.outputStream))
         bufferedWriter.write("cd ${directory.absolutePath}")
 
-        if(kotlinLightCompileVerbose)
+        if(kotlwiftCompileVerbose)
         {
             println("$> cd ${directory.absolutePath}")
         }
@@ -39,7 +39,7 @@ object CommandManager
         {
             bufferedWriter.write(command)
 
-            if(kotlinLightCompileVerbose)
+            if(kotlwiftCompileVerbose)
             {
                 println("$> $command")
             }
@@ -50,7 +50,7 @@ object CommandManager
         // Process.waitFor() not work, so we do a trick to write a specific END message to know when all commands are completes
         bufferedWriter.write("echo \"$END_MESSAGE\"")
 
-        if(kotlinLightCompileVerbose)
+        if(kotlwiftCompileVerbose)
         {
             println("$> echo \"$END_MESSAGE\"")
         }
